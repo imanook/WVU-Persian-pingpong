@@ -11,8 +11,13 @@
     <h1>Persian Ping-Pong Competition</h1>
     <p>Join us for a fun-filled ping-pong event!</p>
   </header>
+  <img src="images/picture-on-top.jpg" alt="Picture on Top" class="picture-on-top">
+
+  <img src="images/image4.jpg" alt="" class="custom-image">
+
 
   <main>
+    <img src="images/background-image.jpg" alt="" class="wvu-image">
     <section>
       <h2>Event Information</h2>
       <p>Date: 12 August and 13 August</p>
@@ -40,13 +45,39 @@
         <input type="hidden" name="return" value="thank-you.html">
         <input type="hidden" name="cancel_return" value="payment-failed.html">
 
-        <button type="submit">Register & Pay $5</button>
+        <button type="submit" class="register-button">Register & Pay $5</button>
       </form>
+    </section>
+
+    <!-- Zelle Payment Instructions -->
+    <section id="zellePaymentInstructions">
+      <h2>Alternative Payment Option</h2>
+      <p>If you don't have PayPal, you can still register as a conditional participant by sending $5 to the admin's Zelle account at (907) 799-9370.</p>
+      <p>Please enter your full name as the transaction memo when making the payment.</p>
     </section>
   </main>
 
   <footer>
     <p>Contact: <a href="mailto:imanoraki@gmail.com">imanoraki@gmail.com</a></p>
   </footer>
+
+  <script>
+    const registrationForm = document.getElementById("registrationForm");
+    const zellePaymentInstructions = document.getElementById("zellePaymentInstructions");
+
+    registrationForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const paymentMethod = formData.get("paymentMethod");
+
+      if (paymentMethod === "paypal") {
+        // Process the form submission for PayPal payment
+        alert("Thank you for registering with PayPal!");
+      } else if (paymentMethod === "zelle") {
+        // Process the form submission for Zelle payment
+        alert("Thank you for registering with Zelle! Please send $5 to the admin's Zelle account at (907) 799-9370 with your full name as the transaction memo.");
+      }
+    });
+  </script>
 </body>
 </html>
