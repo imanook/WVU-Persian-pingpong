@@ -66,20 +66,11 @@
 
   <script>
     const registrationForm = document.getElementById("registrationForm");
-    const zellePaymentInstructions = document.getElementById("zellePaymentInstructions");
 
     registrationForm.addEventListener("submit", function (event) {
       event.preventDefault();
-      const formData = new FormData(event.target);
-      const paymentMethod = formData.get("paymentMethod");
-
-      if (paymentMethod === "paypal") {
-        // Process the form submission for PayPal payment
-        alert("Thank you for registering with PayPal!");
-      } else if (paymentMethod === "zelle") {
-        // Process the form submission for Zelle payment
-        alert("Thank you for registering with Zelle! Please send $5 to the admin's Zelle account at (907) 799-9370 with your full name as the transaction memo.");
-      }
+      alert("Thank you for registering! Please proceed to PayPal for payment.");
+      event.target.submit(); // Submit the form to PayPal
     });
   </script>
 </body>
