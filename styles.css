@@ -1,0 +1,104 @@
+/* Reset some default styles to make it consistent */
+body, h1, h2, p, form {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('images/background-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fix the background image in place */
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  padding: 2rem;
+  position: relative; /* Add relative positioning for the Zelle payment instructions positioning */
+}
+
+/* Additional styling for the Event Information section */
+section {
+  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.7); /* Add a semi-transparent white background */
+  padding: 1rem; /* Add padding to create some space around the text */
+}
+
+/* Additional styling for the picture on top */
+img.picture-on-top {
+  position: absolute;
+  top: 4px; /* Adjust the top position as needed */
+  left: 45px; /* Adjust the left position as needed */
+  width: 200px; /* Set the width of the image, reduce from 800px */
+  height: 1200; /* Set the height to auto to maintain aspect ratio */
+  z-index: 3; /* Set a higher z-index to place the image on top */
+}
+
+/* Additional styling for the custom image */
+img.custom-image {
+  position: absolute;
+  top: 170px; /* Adjust the top position as needed */
+  left: 1260px; /* Adjust the left position as needed */
+  width: 600px; /* Adjust the width as needed */
+  height: auto; /* Set the height to auto to maintain aspect ratio */
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 4rem; /* Increase the font size for the h1 element */
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-row-gap: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input, button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem; /* Increase the font size for the button, adjust as needed */
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Additional styling for the Zelle payment instructions */
+#zellePaymentInstructions {
+  display: none;
+  margin-top: 2rem;
+  font-size: 1.2rem; /* Increase the font size for the Zelle payment instructions, adjust as needed */
+}
+
+input[name="paymentMethod"]:checked ~ #zellePaymentInstructions {
+  display: block;
+}
